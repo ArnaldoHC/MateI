@@ -1,0 +1,87 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+
+\title{Tarea 1}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\textbf{Valor:} 5 puntos \\
+\textbf{Técnicas Cualitativa y Numérica} \\
+\textbf{Fecha de entrega:} Viernes 28 de febrero \\
+La entrega es en físico durante la clase. \\
+No olvides poner énfasis en los desarrollos correspondientes. \\
+Si usas algún lenguaje de programación para resolver los ejercicios, por favor adjunta el código o el diagrama de flujo.
+
+\section*{1. Campos de direcciones}
+
+\begin{enumerate}
+    \item De la ecuación diferencial \( y' = x + \sin(y) \):
+    \begin{enumerate}[label=\alph*)]
+        \item Una curva solución pasa por el punto \( (1, \pi/2) \). ¿Cuál es su pendiente en ese punto?
+        \item Justifica porque para \( x > 1 \) las soluciones son crecientes.
+        \item Muestra que la concavidad de cada solución tiene por función \( 1 + x \cos(y) + \frac{1}{2} \sin(2y) \). Justifica cada uno de los pasos.
+        \item Una curva solución pasa por el punto \( (0, 0) \). Demuestra que la curva tiene un mínimo relativo en \( (0, 0) \).
+    \end{enumerate}
+    
+    \item Sea \( \phi(x) \) la solución del problema con valor inicial \( y' = x - y \), \( y(0) = 1 \). Verifica que \( y = x - 1 \) es una solución de \( y' = x - y \) y explica por qué la gráfica de \( \phi(x) \) siempre está por arriba de la recta \( y = x - 1 \).
+    
+    \item Traza las isoclinas y bosqueja varias curvas soluciones, incluyendo las curvas que satisfacen las condiciones iniciales dadas:
+    \begin{enumerate}[label=\alph*)]
+        \item \( y' = x + 2y \), \( y(0) = 1 \)
+        \item \( y' = x^2 \), \( y(0) = 1 \)
+    \end{enumerate}
+    
+    \item Identifica la ecuación con su campo correspondiente. Justifica tu elección.
+    \begin{enumerate}[label=\roman*)]
+        \item \( \frac{dy}{dx} = x - 1 \)
+        \item \( \frac{dy}{dx} = 1 - y^2 \)
+        \item \( \frac{dy}{dx} = y^2 - x^2 \)
+        \item \( \frac{dy}{dx} = 1 - x \)
+        \item \( \frac{dy}{dx} = 1 - y \)
+        \item \( \frac{dy}{dx} = x^2 - y^2 \)
+        \item \( \frac{dy}{dx} = 1 + y \)
+        \item \( \frac{dy}{dx} = y^2 - 1 \)
+    \end{enumerate}
+\end{enumerate}
+
+\section*{2. Línea Fase}
+
+\begin{enumerate}
+    \item[5.] De las siguientes cuatro funciones \( f(y) \), esboza la línea fase para la ecuación diferencial autónoma \( \frac{dy}{dt} = f(y) \).
+    
+    \item[6.] De las siguientes líneas fases provenientes de ecuaciones autónomas \( \frac{dy}{dt} = f(y) \), esboza la gráfica de la correspondiente función \( f(y) \) asumiendo que \( y = 0 \) es la mitad del segmento mostrado en cada caso.
+\end{enumerate}
+
+\section*{3. Método de Euler}
+
+\begin{enumerate}
+    \item[8.] Aplica el método de Euler sobre la siguiente ecuación diferencial con valor inicial y en el intervalo dado. Debes incluir: a) tabla y b) gráfica.
+    \[
+    \frac{dy}{dx} = y^2 - 4x, \quad y(0) = 0.5; \quad 0 \leq x \leq 2, \quad \Delta x = 0.25
+    \]
+    
+    \item[9.] Utiliza el método de Euler para aproximar la solución del siguiente problema de valor inicial en el valor indicado, tomando los pasos 1, 2, 4 y 8:
+    \[
+    \frac{dx}{dt} = 1 + t \sin(tx), \quad x(0) = 0. \quad \text{En } t = 1
+    \]
+    
+    \item[10.] La ley de Stefan de la radiación establece que la tasa de cambio de temperatura de un cuerpo a \( T(t) \) Kelvin en un medio a \( M(t) \) Kelvin es proporcional a \( M^4 - T^4 \). Es decir,
+    \[
+    \frac{dT}{dt} = K \left[ M^4(t) - T^4(t) \right],
+    \]
+    donde \( K = 2.9 \times 10^{-10} \, \text{min}^{-1} \) y \( M(t) = 293 \) Kelvin. Si \( T(0) = 360 \) Kelvin, usa el método de Euler con \( \Delta x = 3 \) min para aproximar la temperatura del cuerpo después de:
+    \begin{enumerate}[label=\alph*)]
+        \item 30 minutos
+        \item 60 minutos
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}

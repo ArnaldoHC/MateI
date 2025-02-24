@@ -1,0 +1,255 @@
+\documentclass[12pt]{exam}
+\usepackage[utf8]{inputenc}		% Caracteres latinos
+\usepackage[spanish]{babel}		% Idioma español
+\usepackage{geometry}			% Organizar el documento
+\usepackage{graphicx}			% Incluir gráficos
+\usepackage{makecell}			% Para personalizar las celdas de una tabla
+\usepackage[nohdr]{mathexam}	% Añadimos el paquete mathexam (sin header)
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{tikz,pgfplots}
+\usepgfplotslibrary{polar}
+\usepackage[shortlabels]{enumitem}
+ \renewcommand{\baselinestretch}{1.5}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{esvect}
+\usepackage[fleqn]{mathtools}
+\usepackage{relsize}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage[document]{ragged2e}
+ \usepackage{textpos}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\usepackage{mathdesign}
+
+%\usepackage[]{mathptmx}        % A free version o Times Roman with mathematical symbols
+%\usepackage{pzc}               % fuente cursiva (conjuntos) Zapf Chancery
+%\usepackage{showframe}
+%\usepackage{lipsum}
+
+% DOCUMENTACIÓN DE LA CLASE EXAM
+% http://ftp.inf.utfsm.cl/pub/tex-archive/macros/latex/contrib/exam/examdoc.pdf
+% DOCUMENTACIÓN DE LA CLASE MATHEXAM
+% http://ctan.dcc.uchile.cl/macros/latex/contrib/mathexam/doc/mathexam.pdf
+
+% Definimos la geometría de la primera página
+\geometry{
+	a4paper,                    % Tamaño del documento
+	hmargin = {1.7cm, 1.6cm}, 	% Margen horizontal izquierdo, derecho
+	vmargin = {1cm, 1cm},	    % Margen vertical superior, inferior
+	headsep = 4mm,				% Separación entre el encabezado y el texto
+	head = .2cm,				% Tamaño del encabezado
+	% marginparsep = 5mm, 		% Seperación entre las notas y el texto
+	% marginpar = 1.5cm,		% Tamaño de las notas
+	includeall,                 % incluye el encabezado, footer y notas dentro del tamaño del documento
+	nomarginpar,	            % Elimina las notas
+	foot = 1cm,                 % Tamaño del footer
+	twoside,                	% Habilita el modo de impresión a doble cara
+}
+
+\selectlanguage{spanish}        % Selecciona el idioma
+\spanishdecimal{.}
+
+%\pagestyle{headandfoot}         % Nuestro examen tendrá encabezado y pié
+
+% DEFINIMOS EL ENCABEZADO
+%\header{
+%\begin{tabular}{l c c c l}
+%            \makecell{\includegraphics[height=2.5cm]{logo.png}} &
+%            \makecell{\textbf{IPEA 215} \\Raúl Scalabrini Ortiz} &
+%            \makecell{Examen} &
+%            \makecell{Curso\\1er Año} &
+%             \makecell[l]{Apellido y %Nombre:\enspace\makebox[2in]{\hrulefill}\\Fecha: \today}
+%        \end{tabular}}{}{}
+
+% DEFINIMOS EL PIE
+%\rfoot{Página \thepage\ de \numpages}
+\newcommand{\iuni}{\pmb{\hat{\imath}}}
+\newcommand{\juni}{\pmb{\hat{\jmath}}}
+\newcommand{\kuni}{\pmb{\hat{k}}}
+\renewcommand{\sin}{\,\text{sen}\,}
+\newcommand*\colvec[3][]{
+    \begin{pmatrix}\ifx\relax#1\relax\else#1\\\fi#2\\#3\end{pmatrix}
+}
+%\colvec{a}{b} para dos 
+% \colvec[a]{b}{c} para tres
+% DOCUMENTO
+\begin{document}
+
+\centering
+
+
+\Large 
+\textbf{\huge Reposición 1 \\ \large }
+
+\small
+% Fecha de entrega Viernes 28 de Enero
+\vskip10pt
+% \flushleft
+% \begin{tcolorbox}
+% LEE ANTES DE COMENZAR LA TAREA
+% \begin{enumerate}
+%     \item Se califica sobre 10 por lo que es posible obtener 13 si se realizan también los ejercicios opcionales.
+%     \item El ejercicio opcional puede sustituir a uno y solo uno de los ejercicio del bloque previo.
+%     \item Subir el archivo en \textbf{PDF} a la plataforma con las páginas numeradas.
+
+% \end{enumerate}
+% \end{tcolorbox}
+\normalsize
+
+\pointpoints{punto}{puntos}
+\pointformat{\bfseries\boldmath(\thepoints)}
+\vskip10pt
+
+    
+    \begin{questions}
+     %1 Tarea 1 4 %
+     \question
+     % S1.3 Blanchard e11 pp48     CAMPOS DIRECCIONALES
+     Identifica la ecuación con su campo correspondiente. \textbf{Justifica} tu elección.
+     
+     \begin{tabular}{llll}
+       i) $\frac{dy}{dx}=x-1$   & ii) $\frac{dy}{dx}=1-y^2$ & iii) $\frac{dy}{dx}=y^2-x^2$ & iv) $\frac{dy}{dx}=1-x$ \\
+         v) $\frac{dy}{dx}=1-y$ & vi) $\frac{dy}{dx}=x^2-y^2$ & vii) $\frac{dy}{dx}=1+y$ & viii) $\frac{dy}{dx}=y^2-1$
+     \end{tabular}
+     
+     \includegraphics[scale=.48]{F1T1.pdf}
+% ii | v | vii | iii
+% viii | vi | iv | i
+
+     %2 Tarea 1 12 %
+     \question
+     % S1.6 Blanchard pp94 e39 Spp30 LÍNEA FASE
+     El modelo de una cierta población esta descrito por una ecuación diferencial $dP/dt=f(P)$, donde $P(t)$ es la población al tiempo $t$ y de la cual se ha recabado la siguiente información:
+     
+     \begin{itemize}
+         \item Se encontraron puntos de equilibrio solamente en $P=0$, $P=10$ y $P=50$.
+         \item Cuando la población es igual a 100, ésta decrece.
+         \item Cuando la población es igual a 25, ésta incrementa.
+     \end{itemize}
+     
+     \begin{enumerate}[a)]
+         \item Esboza las dos posibles líneas fases del sistema para $P>0$.
+         \item Esboza las correspondientes funciones $f(P)$ para cada una de las líneas fase.
+         \item Da una fórmula para la función $f(P)$ cuyas gráficas coincidan \textbf{cualitativamente} con las gráficas de \textbf{b)} para cada una de las líneas fase.
+     \end{enumerate}
+
+     
+     %3 Tarea 1 8 %
+     \question
+     % S1.4 Nagle pp56 e16 Spp32 MÉTODO DE EULER
+     La ley de Stefan de la radiación establece que la tasa de cambio de temperatura de un cuerpo a $T(t)$ Kelvin en un medio a $M(t)$ Kelvin es proporcional a $M^4-T^4$. Es decir, $$\frac{dT}{dt}=K\left[M^4(t)-T^4(t) \right],$$ donde $K=2.9\times10^{-10}(\text{min})^{-1}$ y $M(t)=293$ Kelvin. Si $T(0)=360$ Kelvin, usa el método de Euler con $h=3\,\text{min}$ para aproximar la temperatura del cuerpo después de:
+     
+     \begin{enumerate}[a)]
+         \item 30 minutos
+         \item 60 minutos
+     \end{enumerate}
+
+
+    %  %4 Tarea 1 1 %
+    %  \question
+    %  % S1.3 Nagle e6 pp23 Spp28    CAMPOS DIRECCIONALES
+    %  De la ecuación diferencial $y'=x+\sen(y)$:
+    %  \begin{enumerate}[a)]
+    %      \item Una curva solución pasa por el punto $(1,\pi/2)$ ¿Cuál es su pendiente en ese punto?.
+    %      \item Justifica porque para $x>1$ la soluciones son crecientes.
+    %      \item Muestra que la concavidad de cada solución tiene por función $1+x\cos(y)+1/2\sen(2y)$. Justifica cada uno de los pasos.
+    %      \item Una curva solución pasa por el punto $(0,0)$. Demuestra que la curva tiene un mínimo relativo en $(0,0)$.
+    %  \end{enumerate}
+  
+     %4 Tarea 3 3 %
+     \question
+     % S2.6 1,2,7,13,20,25,28,31
+     Identifica la ecuación como homogénea, de Bernoulli, con coeficientes lineales o de la forma $y'=G(ax+by)$. Resuelve las ecuaciones.
+     \begin{enumerate}[a)]
+        %h
+        \item $(2x-y)dx+(4x+y-3)dy=0$
+        %f
+        \item $\frac{dx}{dt}+tx^3+\frac{x}{t}=0$
+        %e
+        \item $\frac{dy}{dx}= \sin(x-y)$
+     	%a
+     	\item $(y-4x-1)^2dx-dy=0$
+        %b
+        \item $2tx\,dx+(t^2-x^2)dt=0$
+       \end{enumerate}
+
+    %  %5 Tarea 3 6 %
+    %  \question
+    %  %S3.6 e1
+    %  Calcula la aproximación en $x=1$ mediante el \textit{a)} el método de Euler y \textit{b)} el método de Euler mejorado de la solución $\phi(x)=e^{2x}$ de $y'=2y$ con $y(0)=1$. Completa las tablas.
+    
+    % \small
+    %  \begin{tabular}{cm{2.5cm}cc}
+    %  \hline
+    %  h&\centering{Aproximación de Euler}&Error&Error/h\\
+    %  \hline
+    %  1\\
+    %  $10^{-1}$\\
+    %  $10^{-2}$\\
+    %  $10^{-3}$\\
+    %  $10^{-4}$\\
+    %  \hline
+    %  \end{tabular}
+    %  \begin{tabular}{cm{3cm}cc}
+    %  \hline
+    %  h&\centering{Aproximación de Euler mejorado}&Error&Error/$h^2$\\
+    %  \hline
+    %  1\\
+    %  $10^{-1}$\\
+    %  $10^{-2}$\\
+    %  $10^{-3}$\\
+    %  $10^{-4}$\\
+    %  \hline
+    %  \end{tabular}
+
+     %5 Tarea 2 5 %
+     \question
+     % S2.2 e34 pp48
+     Según la ley de enfriamiento de Newton, al introducir un objeto a temperatura $T$ en un medio con temperatura $M$, la razón de cambio de $T$ es proporcional a la diferencia de temperatura $M-T$ siguiendo la ecuación diferencial $\frac{dT}{dt}=k(M-T)$:
+     \begin{enumerate}[a)]
+     \item	Resuelve la ecuación diferencial en términos de $T$
+     \item	Si un termómetro marca $100°F$ y se coloca en un medio con temperatura constante de $70°F$.  Después de 6 min el termómetro marca $80°F$. ¿Cuál es la lectura después de 20 minutos?
+     \end{enumerate}
+
+
+     %6 Tarea 2 8 %
+     \question
+     % S2.3 e35 pp57
+     Supón que una solución salina con 0.2 kg de sal por litro se introduce en un tanque que contiene inicialmente 500 litros de agua y 5 kg de sal. La solución entra al tanque a razón de 5 L/min. La mezcla se mantiene uniforme revolviéndola, y sale del tanque a razón de 5 L/min.
+
+\includegraphics[scale=.34]{F2T2.pdf}
+
+\begin{enumerate}[a)]
+	\item	Determina la concentración en kilogramos/litros de sal en el tanque después de 10 minutos viendo al modelo como una ecuación lineal.
+    \item Después de 10 minutos aparece en el tanque una fuga a razón de 1 L/min. ¿Cuál será la concentración (en kg/L) de sal en el tanque después de 20 minutos a partir del inicio de la fuga?
+    
+    \includegraphics[scale=.34]{F3T2.pdf}
+ \end{enumerate}
+
+
+     %7 Tarea 2 10 %
+     \question
+     % S2.4 e14,15,26 pp66
+      Si las siguiente ecuaciones son exacta, resuélvelas.
+      \begin{enumerate}[a)]
+      	\item	$e^t(y-t)dt+(1+e^t)dy=0$
+        % \item	$\cos\theta dr-(r\sin\theta-e^{\theta})d\theta=0$
+        \item	$(\tan y-2)dx+(x\sec^2y+1/y)dy=0$, con $y(0)=1$
+      \end{enumerate}
+
+     % 8 Tarea 2 9 %
+     \question
+     Para cada una de las siguientes ecuaciones, determina la función más general $M(x,y)$ de modo que la ecuación sea exacta:
+     \begin{enumerate}[a)]
+     	\item	$M(x,y)dx+(\sec^2y-x/y)dy=0$
+        \item	$M(x,y)dx+(\sin x\cos y-xy-e^{-y})dy=0$
+     \end{enumerate}
+
+        \end{questions}
+
+\end{document}
